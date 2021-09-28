@@ -62,19 +62,27 @@ body {
   font-family: 'Courier New', monospace;
 }
 .centerSearch button {
-  box-shadow:inset 0px 1px 0px 0px #9acc85;
-	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
-	background-color:#74ad5a;
-	border-radius:3px;
-	border:1px solid #3b6e22;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:2px;
+	border:1px solid #ffaa22;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:#333333;
 	font-family:Arial;
-	font-size:13px;
-	padding:6px 8px;
+	font-size:15px;
+	font-weight:bold;
+	padding:3px 6px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #92b879;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.centerSearch button:hover {
+  background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.centerSearch button:active {
+  position:relative;
+	top:1px;
 }
 .nav {
   display: flex;
@@ -132,10 +140,14 @@ body {
   flex-direction: column;
   width: 240px;
   height: 320px;
-  border: 3px solid gray;
+  border: 1px solid lightgrey;
   margin: 15px;
   border-radius: 4px;
   padding: 10px;
+  transition: 0.3s;
+}
+.product:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .p-img {  
   display: flex;
@@ -205,21 +217,31 @@ body {
   margin-top: 15px;
   display: block;
   box-sizing: border-box;
-  box-shadow: 0px 10px 14px -7px #3e7327;
-	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
-	background-color:#77b55a;
-	border-radius:4px;
-	border:1px solid #4b8f29;
+  
+  box-shadow: 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:20px;
+	border:1px solid #ffaa22;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:#333333;
 	font-family:Arial;
-	font-size:13px;
+	font-size:15px;
 	font-weight:bold;
-	padding:15px 25px;
+	padding:13px 45px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #5b8a3c;
+	text-shadow:0px 1px 0px #ffee66;
 }
+#cartBtn:hover {
+  background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+#cartBtn:active {
+  position:relative;
+	top:1px;
+}
+
 .aside {
   min-height: 400px;
   width: 50%;

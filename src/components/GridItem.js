@@ -3,6 +3,8 @@ import { Component } from 'react';
 
 class GridItem extends Component {
     render() {
+        let productPrice = this.props.itemPrice
+        productPrice = productPrice.toFixed(2)
         return (
             <div className="product">
                 <div className="p-img">
@@ -14,7 +16,7 @@ class GridItem extends Component {
                     </div>
                     <div className="col">
                         <div className="p-price">
-                            <p>${this.props.itemPrice}</p>
+                            <p>${productPrice}</p>
                         </div>
                         <div className="p-add">
                             <button type="submit" title="Add to cart">ADD</button>
