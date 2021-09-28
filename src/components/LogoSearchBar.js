@@ -6,7 +6,7 @@ class LogoSearchBar extends Component {
     return(
       <div className="header">
         <div className="logo">
-          <p title="Home Decor - House for items">THE SHOP</p>
+          <p title="Online Shopping Portal">THE SHOP</p>
         </div>
         <div className="search">
           <div className="centerSearch">

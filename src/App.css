@@ -40,6 +40,9 @@ body {
   font-size: xx-large;
   color: whitesmoke;
 }
+.logo:hover {
+  cursor: pointer;
+}
 .logo p {
   margin: auto;
   font-weight: bolder;
