@@ -1,0 +1,247 @@
+#root {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0px;
+  background-color: white;
+  background: repeating-linear-gradient(
+-90deg,
+#222,
+#222 10px,
+#333 10px,
+#333 20px
+);
+}
+.whole-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 80px;
+  background-color: black;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.logo {
+  display: flex;
+  width: 240px;
+  height: auto;
+  margin-left: 20px;
+  font-family: 'Courier New', monospace;
+  font-size: xx-large;
+  color: whitesmoke;
+}
+.logo p {
+  margin: auto;
+  font-weight: bolder;
+}
+.search {
+  display: flex;
+}
+.centerSearch {
+  margin: auto;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.centerSearch input[type=text] {
+  height: 29px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+}
+.centerSearch button {
+  box-shadow:inset 0px 1px 0px 0px #9acc85;
+	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+	background-color:#74ad5a;
+	border-radius:3px;
+	border:1px solid #3b6e22;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 8px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #92b879;
+}
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  min-height: 70px;
+  overflow: hidden;
+  background-color: black;
+}
+.nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: 5px dotted underline;
+  font-size: 17px;
+  font-family: 'Courier New', monospace;
+  font-size: medium;
+}
+.nav a:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  width: auto;
+  min-height: 640px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 4px;
+}
+.grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 320px;
+  border: 3px solid gray;
+  margin: 15px;
+  border-radius: 4px;
+  padding: 10px;
+}
+.p-img {  
+  display: flex;
+  width: 100%;
+  height: 75%;
+  background-color: white;
+}
+.p-img img {
+  margin: auto;
+  width: auto;
+  height: 100%;
+}
+.p-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 25%;
+}
+.p-title {
+  width: 70%;
+  height: 100%;
+  font-family: 'Courier New', monospace;
+  overflow-y: scroll;
+}
+.p-title p {
+  margin-top: 5px;
+  padding-right: 5px;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+}
+.p-price {
+  display: flex;
+  width: 100%;
+  height: 50%;
+}
+.p-price p {
+  margin: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.p-add {
+  display: flex;
+  width: 100%;
+  height: 50%;
+}
+.p-add button {
+  margin: auto;
+  font-family: 'Courier New', monospace;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: black;
+  border-color: black;
+}
+.p-add button:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+.aside {
+  min-height: 400px;
+  width: 50%;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 3px dotted gray;
+  border-radius: 5px;
+}
+.footer {
+  display: flex;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  margin-bottom: 10px;
+  color: whitesmoke;
+  background-color: black;
+}
+.footer p {
+  font-family: 'Courier New', monospace;
+  font-size: large;
+  margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    justify-content: space-evenly;
+  }
+  .centerSearch {
+    padding-right: 0px;
+    margin-bottom: 10px;
+  }
+  .logo p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .aside {
+    width: 100%;
+  }
+}
