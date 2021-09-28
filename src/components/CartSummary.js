@@ -4,7 +4,7 @@ import { Component } from 'react';
 class CartSummary extends Component {
     render() {
         return (
-            <div className="aside"></div>
+            <div className="aside" id="cart"></div>
         )
     }
 }

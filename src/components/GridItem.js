@@ -6,7 +6,7 @@ class GridItem extends Component {
         return (
             <div className="product">
                 <div className="p-img">
-                    <img src={"images/" +this.props.imgUrl + ".jpg"} />
+                    <img src={this.props.imgUrl} alt="fake item"/>
                 </div>
                 <div className="p-info">
                     <div className="p-title">
