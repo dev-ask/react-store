@@ -8,7 +8,7 @@ class GridItem extends Component {
         return (
             <div className="product">
                 <div className="p-img">
-                    <img src={this.props.imgUrl} alt="fake item" title={this.props.itemTitle}/>
+                    <img src={this.props.imgUrl} alt="fake item" title={this.props.itemTitle} onClick={()=> {this.props.handlePopup(this.props.productId)}}/>
                 </div>
                 <div className="p-info">
                     <div className="p-title">

@@ -2,6 +2,8 @@ import React from 'react';
 import GridItem from './GridItem';
 import { Component } from 'react';
 import ProductsLoadScreen from './ProductsLoadScreen';
+import ReactModal from 'react-modal';
+import ProductPopup from './ProductPopup';
 
 class ProductGrid extends Component {
     constructor() {
@@ -10,14 +12,25 @@ class ProductGrid extends Component {
             allCategories: [],
             products: [],
             dataLoading: true,
+            modalPopup: false,
+            modalTitle: "",
+            modalDesc: "",
+            modalImage: "",
+            modalPrice: "",
+            modalCategory: "",
+            modalRatingCount: "",
+            modalRating: ""
         }
         this.getWomens = this.getWomens.bind(this)
         this.getMens = this.getMens.bind(this)
         this.getJewelery = this.getJewelery.bind(this)
         this.getElectronics = this.getElectronics.bind(this)
+        this.handlePopup = this.handlePopup.bind(this)
     }
 
     componentDidMount() {
+
+        ReactModal.setAppElement('body'); // To avoid React Modal Warnings, because body of our html does not exist yet
 
         let initialProducts = "women's clothing";
 
@@ -87,10 +100,28 @@ class ProductGrid extends Component {
             })
     }
 
+    handlePopup(id) {
+        this.state.products.map(product => {
+            if(product.id === id) {
+                this.setState({
+                    modalTitle: product.title,
+                    modalDesc: product.description,
+                    modalImage: product.image,
+                    modalPrice: product.price,
+                    modalCategory: product.category,
+                    modalRating: product.rating.rate,
+                    modalRatingCount: product.rating.count,
+                    modalPopup: true
+                })
+            }
+            return true
+        })
+    }
+
     render() {
 
-        const myProducts = this.state.products.map(product => <GridItem key={product.id} imgUrl={product.image} itemTitle={product.title} itemPrice={product.price} />) 
-        
+        const myProducts = this.state.products.map(product => <GridItem key={product.id} productId={product.id} imgUrl={product.image} itemTitle={product.title} itemPrice={product.price} handlePopup={this.handlePopup}/>) 
+
         return (
             <div className="grid">
                 <div className="nav">
@@ -99,7 +130,19 @@ class ProductGrid extends Component {
                     <button onClick={this.getJewelery}>Jewelery</button>
                     <button onClick={this.getElectronics}>Electronics</button>
                 </div>
+
                 {this.state.dataLoading ? <ProductsLoadScreen /> : myProducts}
+
+                <ReactModal className="modal-window" isOpen={this.state.modalPopup} onRequestClose={() => {this.setState({modalPopup: false})}}>
+                    <ProductPopup 
+                        title={this.state.modalTitle}
+                        imageUrl={this.state.modalImage}
+                        price={this.state.modalPrice}
+                        description={this.state.modalDesc}
+                        category={this.state.modalCategory}
+                        rating={this.state.modalRating}
+                        reviews={this.state.modalRatingCount} />
+                </ReactModal>
             </div>
         )
     }
