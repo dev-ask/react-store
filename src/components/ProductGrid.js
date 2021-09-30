@@ -26,6 +26,7 @@ class ProductGrid extends Component {
         this.getJewelery = this.getJewelery.bind(this)
         this.getElectronics = this.getElectronics.bind(this)
         this.handlePopup = this.handlePopup.bind(this)
+        this.addToCart = this.addToCart.bind(this)
     }
 
     componentDidMount() {
@@ -118,6 +119,10 @@ class ProductGrid extends Component {
         })
     }
 
+    addToCart() {
+        this.setState({modalPopup: false})
+    }
+
     render() {
 
         const myProducts = this.state.products.map(product => <GridItem key={product.id} productId={product.id} imgUrl={product.image} itemTitle={product.title} itemPrice={product.price} handlePopup={this.handlePopup}/>) 
@@ -141,7 +146,9 @@ class ProductGrid extends Component {
                         description={this.state.modalDesc}
                         category={this.state.modalCategory}
                         rating={this.state.modalRating}
-                        reviews={this.state.modalRatingCount} />
+                        reviews={this.state.modalRatingCount}
+                        addToCart={this.addToCart}
+                        />
                 </ReactModal>
             </div>
         )

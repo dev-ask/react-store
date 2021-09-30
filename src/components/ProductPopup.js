@@ -4,10 +4,8 @@ class ProductPopup extends Component {
     render() {
         return (
             <div className="modal-container">
-                <div classname="image-box">
-                    <div className="image-frame">
-                        <img src={this.props.imageUrl}/>
-                    </div>
+                <div className="image-box">
+                    <img src={this.props.imageUrl}/>
                 </div>
                 <div className="info-box">
                     <div className="info-category">
@@ -31,7 +29,7 @@ class ProductPopup extends Component {
                         <p>{this.props.description}</p>
                     </div>
                     <div className="info-add">
-
+                        <button onClick={this.props.addToCart}>Add To Cart</button>
                     </div>   
                 </div>
             </div>
