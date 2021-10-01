@@ -34,7 +34,7 @@ body {
   display: flex;
   width: 240px;
   height: auto;
-  margin-left: 20px;
+  margin:auto;
   font-family: 'Courier New', monospace;
   font-size: xx-large;
   color: whitesmoke;
@@ -263,7 +263,6 @@ body {
   position:relative;
 	top:1px;
 }
-
 .aside {
   min-height: 400px;
   width: 50%;
@@ -300,15 +299,16 @@ body {
   font-family: 'Courier New', monospace;
 }
 
-/* Styling Product Popup Window */
+/* Styling Product Popup Window ----------------------------------------------------------------------------------------------------------------------------*/
 .modal-window {
   margin: auto;
   width: 1000px;
-  height: auto;
+  height: 550px;
   background-color: white;
   align-self: center;
   margin-top: 150px;
-  border: 2px solid black;
+  
+  box-shadow: 5px 3px 15px 5px #888888;
   padding: 30px;
 }
 .modal-container {
@@ -333,32 +333,43 @@ body {
   flex: 3;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 400px;
   padding: 20px;
 }
 .info-category {
+  display: flex;
+  justify-content: space-between;
   color: lightslategrey;
 }
-.info-title {
-
+.info-category button {
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 18px;
+}
+.info-category button:hover {
+  font-size: 20px;
+}
+.info-category button:active {
+  position: relative;
+  top: 1px;
 }
 .info-rating {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.info-star {
-
-}
-.info-reviews {
-
-}
 .info-price {
   font-weight: bold;
   font-size: 24px;
 }
 .info-description {
-
+  min-height: 160px;
+  overflow-y: scroll;
+  position: relative;
+  top: -20px;
 }
 .info-add button{
   font-family: 'Courier New', monospace;
@@ -368,7 +379,7 @@ body {
   padding: 16px 32px;
   text-align: center;
   display: inline-block;
-  font-size: 18px;
+  font-size: 16px;
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -376,11 +387,14 @@ body {
 .info-add button:hover {
   background-color: white;
   color: black;
-  border: 1px solid black;
-  font-size: 20px;
-  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  font-size: 18px;
+  box-shadow: 5px 0px 20px 5px rgba(67, 255, 42, 0.438);
+}
+.info-add button:active {
   position: relative;
-  top: -2px;
+  top: 2px;
 }
 
 @media screen and (max-width: 500px) {

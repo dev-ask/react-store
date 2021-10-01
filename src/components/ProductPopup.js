@@ -10,13 +10,14 @@ class ProductPopup extends Component {
                 <div className="info-box">
                     <div className="info-category">
                         <p>category: {this.props.category}</p>
+                        <button onClick={this.props.addToCart}>x</button>
                     </div>
                     <div className="info-title">
                         <h2>{this.props.title}</h2>
                     </div>
                     <div className="info-rating">
                         <div className="info-star">
-                            <p>Rating: {this.props.rating}</p>
+                            <p>Rating: {this.props.rating} / 5</p>
                         </div>
                         <div className="info-reviews">
                             <p>Reviews: {this.props.reviews}</p>
